@@ -24,13 +24,12 @@ public class FdaServiceTest {
 
     @Test
     void searchDrugRecordApplications_ShouldReturnListOfDrugRecordRecords_WhenManufacturerNameExists() {
-        // Arrange
+
         String manufacturerName = "Pfizer";
         Map<String, Object> expectedResult = new HashMap<>();
         when(fdaService.searchDrugRecordRecords(manufacturerName, 1, 1))
                 .thenReturn(expectedResult);
 
-        // Act
         Map<String, Object> result = fdaService.searchDrugRecordRecords(manufacturerName, 1, 1);
 
         // Assert

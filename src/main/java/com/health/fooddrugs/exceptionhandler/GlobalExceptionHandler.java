@@ -11,7 +11,10 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
+    /**
+     * @param ex
+     * @return
+     */
     @ExceptionHandler(HttpClientErrorException.NotFound.class)
     public ResponseEntity<Map<String, Object>> handleNotFound(HttpClientErrorException.NotFound ex) {
         Map<String, Object> response = new HashMap<>();
@@ -22,6 +25,10 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * @param ex
+     * @return
+     */
     @ExceptionHandler(HttpClientErrorException.class)
     public ResponseEntity<Map<String, Object>> handleHttpClientError(HttpClientErrorException ex) {
         Map<String, Object> response = new HashMap<>();
@@ -32,7 +39,10 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, ex.getStatusCode());
     }
 
-
+    /**
+     * @param ex
+     * @return
+     */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
         Map<String, Object> response = new HashMap<>();

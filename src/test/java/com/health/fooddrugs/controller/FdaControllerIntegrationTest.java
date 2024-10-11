@@ -3,7 +3,6 @@ package com.health.fooddrugs.controller;
 
 import com.health.fooddrugs.FoodDrugServiceApplication;
 import com.health.fooddrugs.model.DrugRecord;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,14 +29,10 @@ public class FdaControllerIntegrationTest {
         return "http://localhost:" + port + "/api/fda" + endpoint;
     }
 
-    @BeforeEach
-    public void setUp() {
-        // Prepare any setup if needed before each test case
-    }
 
     @Test
     public void testSearchDrugRecordApplications() {
-        // Call the search API
+
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(getBaseUrl("/search"))
                 .queryParam("manufacturerName", "Pfizer")
                 .queryParam("page", 0)
@@ -53,7 +48,7 @@ public class FdaControllerIntegrationTest {
 
     @Test
     public void testStoreDrugRecordApplication() {
-        // Create a new DrugRecord object
+
         DrugRecord newRecord = new DrugRecord();
         newRecord.setApplicationNumber("ANDA077374");
         newRecord.setManufacturerName("Pfizer");
@@ -63,7 +58,7 @@ public class FdaControllerIntegrationTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<DrugRecord> request = new HttpEntity<>(newRecord, headers);
 
-        // Call the store API
+
         ResponseEntity<DrugRecord> response = restTemplate.postForEntity(getBaseUrl("/store"), request, DrugRecord.class);
 
         // Verify the response
@@ -75,10 +70,8 @@ public class FdaControllerIntegrationTest {
 
     @Test
     public void testGetAllStoredApplications() {
-        // Add a new record first
-        testStoreDrugRecordApplication();
 
-        // Call the records API
+        testStoreDrugRecordApplication();
         ResponseEntity<List> response = restTemplate.getForEntity(getBaseUrl("/records"), List.class);
 
         // Verify the response

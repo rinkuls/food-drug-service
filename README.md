@@ -45,3 +45,6 @@ records by FDA manufacturer name and store specific DrugRecord records in the lo
     - Store a DrugRecord record: `POST /api/fda`
     - Retrieve stored records: `GET /api/fda/record`
    
+8. to check the code coverage got to
+   
+    ```food-drug-service/target/site/jacoco/index.html

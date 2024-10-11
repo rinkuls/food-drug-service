@@ -36,11 +36,11 @@ public class FdaServiceImplTest {
 
     @Test
     public void testGetAllDrugRecordRecords() {
-        DrugRecord DrugRecordRecord1 = new DrugRecord("APP123", "Pfizer", "SubstanceX");
-        DrugRecord DrugRecordRecord2 = new DrugRecord("APP124", "Moderna", "SubstanceY");
+        DrugRecord drugRecord1 = new DrugRecord("APP123", "Pfizer", "SubstanceX");
+        DrugRecord drugRecord2 = new DrugRecord("APP124", "Moderna", "SubstanceY");
         drugRecordRepository.deleteAll();
-        fdaService.saveDrugRecordApplication(DrugRecordRecord1);
-        fdaService.saveDrugRecordApplication(DrugRecordRecord2);
+        fdaService.saveDrugRecordApplication(drugRecord1);
+        fdaService.saveDrugRecordApplication(drugRecord2);
 
 
         List<DrugRecord> records = fdaService.getAllStoredApplications();

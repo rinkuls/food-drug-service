@@ -26,18 +26,30 @@ public class FdaServiceImpl implements FdaService {
     @Autowired
     private DrugRecordRepository drugRecordRepository;
 
+    /**
+     * @param manufacturerName
+     * @param page
+     * @param size
+     * @return
+     */
     @Override
     public Map<String, Object> searchDrugRecordRecords(String manufacturerName, int page, int size) {
         String url = FDA_API_URL + manufacturerName + "&limit=" + size + "&skip=" + (page * size);
         return restTemplate.getForObject(url, Map.class);
     }
 
-
+    /**
+     * @param DrugRecord
+     * @return
+     */
     @Override
     public DrugRecord saveDrugRecordApplication(DrugRecord DrugRecord) {
         return drugRecordRepository.save(DrugRecord);
     }
 
+    /**
+     * @return
+     */
     @Override
     public List<DrugRecord> getAllStoredApplications() {
         return drugRecordRepository.findAll();
