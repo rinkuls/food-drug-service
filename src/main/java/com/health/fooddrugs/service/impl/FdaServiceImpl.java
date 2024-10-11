@@ -30,7 +30,7 @@ public class FdaServiceImpl implements FdaService {
      * @param manufacturerName
      * @param page
      * @param size
-     * @return
+     * @return  Map<String, Object>
      */
     @Override
     public Map<String, Object> searchDrugRecordRecords(String manufacturerName, int page, int size) {
@@ -40,7 +40,7 @@ public class FdaServiceImpl implements FdaService {
 
     /**
      * @param DrugRecord
-     * @return
+     * @return DrugRecord
      */
     @Override
     public DrugRecord saveDrugRecordApplication(DrugRecord DrugRecord) {
@@ -48,7 +48,7 @@ public class FdaServiceImpl implements FdaService {
     }
 
     /**
-     * @return
+     * @return list of DrugRecords
      */
     @Override
     public List<DrugRecord> getAllStoredApplications() {
