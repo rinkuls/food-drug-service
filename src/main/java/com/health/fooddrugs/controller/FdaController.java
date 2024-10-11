@@ -32,8 +32,8 @@ public class FdaController {
     }
 
     @PostMapping("/store")
-    public DrugRecord storeDrugRecordApplication(@RequestBody @Valid DrugRecord DrugRecordApplication) {
-        return FdaService.saveDrugRecordApplication(DrugRecordApplication);
+    public DrugRecord storeDrugRecordApplication(@RequestBody @Valid DrugRecord drugRecord) {
+        return FdaService.saveDrugRecordApplication(drugRecord);
     }
 
 
