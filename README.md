@@ -1,6 +1,7 @@
 # Fda DrugRecord Application RESTful API
 
-This project is a RESTful API that exposes food-drug-service application records from the Fda API. Users can search for DrugRecord
+This project is a RESTful API that exposes food-drug-service application records from the Fda API. Users can search for
+DrugRecord
 records by FDA manufacturer name and store specific DrugRecord records in the local database.
 
 ## Prerequisites
@@ -44,7 +45,7 @@ records by FDA manufacturer name and store specific DrugRecord records in the lo
     - Search API: `GET /api/fda/search`
     - Store a DrugRecord record: `POST /api/fda`
     - Retrieve stored records: `GET /api/fda/record`
-   
+
 8. to check the code coverage got to
-   
-    food-drug-service/target/site/jacoco/index.html
+
+   food-drug-service/target/site/jacoco/index.html
