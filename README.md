@@ -1,6 +1,6 @@
 # Fda DrugRecord Application RESTful API
 
-This project is a RESTful API that exposes DrugRecord application records from the Fda API. Users can search for DrugRecord
+This project is a RESTful API that exposes food-drug-service application records from the Fda API. Users can search for DrugRecord
 records by FDA manufacturer name and store specific DrugRecord records in the local database.
 
 ## Prerequisites
@@ -12,12 +12,12 @@ records by FDA manufacturer name and store specific DrugRecord records in the lo
 
 1. Clone the repository:
     ```
-    git clone https://github.com/your-username/Fda-api.git
+    git clone  https://github.com/rinkuls/food-drug-service.git
     ```
 
 2. Navigate to the project directory:
     ```
-    cd Fda-api
+    cd food-drug-service
     ```
 
 3. Build the project using Maven:
