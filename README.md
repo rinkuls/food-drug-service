@@ -43,4 +43,5 @@ records by FDA manufacturer name and store specific DrugRecord records in the lo
 
     - Search API: `GET /api/fda/search`
     - Store a DrugRecord record: `POST /api/fda`
-    - Retrieve stored records: `GET /api/fda/records
+    - Retrieve stored records: `GET /api/fda/record`
+   
