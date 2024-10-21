@@ -72,15 +72,6 @@ resources: {}
 #   memory: 128Mi
 
 # Liveness and readiness probes
-livenessProbe:
-  httpGet:
-    path: /
-    port: 8167
-
-readinessProbe:
-  httpGet:
-    path: /
-    port: 8167
 
 # Autoscaling (disabled by default)
 autoscaling:
