@@ -47,7 +47,7 @@ securityContext: {}
 # Service configuration
 service:
   type: ClusterIP
-  port: 80
+  port: 8167
 
 # Ingress configuration (disabled by default)
 ingress:
