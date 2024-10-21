@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "food-drug-service-chat.fullname" . }}
+  labels:
+    {{- include "food-drug-service-chat.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}   # Ensure this is set correctly in values.yaml (e.g., ClusterIP, NodePort, LoadBalancer)
+  ports:
+    - port: {{ .Values.service.port }}  # This is the port exposed by the service
+      targetPort: http                  # Ensure the target port is named 'http' in the deployment
+      protocol: TCP
+      name: http                        # Ensure this name matches the container port in deployment.yaml
+  selector:
+    {{- include "food-drug-service-chat.selectorLabels" . | nindent 4 }}
