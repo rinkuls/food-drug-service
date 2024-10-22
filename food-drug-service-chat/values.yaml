@@ -46,7 +46,7 @@ securityContext: {}
 
 # Service configuration
 service:
-  type: ClusterIP
+  type: NodePort
   port: 8167
 
 # Ingress configuration (disabled by default)
