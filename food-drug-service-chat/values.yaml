@@ -51,11 +51,11 @@ service:
 
 # Ingress configuration (disabled by default)
 ingress:
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: rinkuls.com
       paths:
         - path: /
           pathType: ImplementationSpecific

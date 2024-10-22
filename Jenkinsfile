@@ -57,7 +57,14 @@ node {
             bat 'kubectl get pods --namespace default || exit 255'
         }
 
-        echo 'Deployment to Minikube with Helm was successful!'
+        // Apply Ingress Resource
+        stage('Apply Ingress') {
+            echo "Applying Ingress configuration..."
+            bat 'kubectl apply -f path/to/ingress.yaml --namespace default || exit 255' // Adjust the path as necessary
+            echo "Ingress applied successfully!"
+        }
+
+        echo 'Deployment to Minikube with Helm and Ingress was successful!'
         // Notify on successful completion
         //notifyBuild('SUCCESSFUL')
     } catch (Exception e) {
