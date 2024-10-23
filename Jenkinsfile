@@ -60,9 +60,8 @@ node {
         // Apply Ingress Resource
         stage('Apply Ingress') {
             echo "Applying Ingress configuration..."
+bat "kubectl apply -f food-drug-service-chat\\templates\\ingress.yaml --namespace default"
 
- bat //"kubectl apply -f \"${WORKSPACE}/food-drug-service-chat/templates/ingress.yaml\" --namespace default"
-        bat 'kubectl apply -f food-drug-service-chat/templates/ingress.yaml --namespace default || exit 255' // Adjust the path as necessary
             echo "Ingress applied successfully!"
         }
 
