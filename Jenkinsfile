@@ -57,16 +57,6 @@ node {
             bat 'kubectl get pods --namespace default || exit 255'
         }
 
-        // Apply Ingress Resource
-        stage('Apply Ingress') {
-            echo "Applying Ingress configuration..."
-bat "kubectl apply -f food-drug-service-chat\\templates\\ingress.yaml --namespace default"
-
-            echo "Ingress applied successfully!"
-        }
-
-        echo 'Deployment to Minikube with Helm and Ingress was successful!'
-        // Notify on successful completion
         //notifyBuild('SUCCESSFUL')
     } catch (Exception e) {
         echo "Error occurred: ${e.message}"
