@@ -9,7 +9,6 @@ node {
         // Stage to clone the repository
         stage('Clone Repo') {
             git url: 'https://github.com/rinkuls/food-drug-service.git',
-                credentialsId: 'springdeploy-user',
                 branch: 'main'
         }
 
