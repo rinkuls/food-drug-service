@@ -33,12 +33,12 @@ records by FDA manufacturer name and store specific DrugRecord records in the lo
 
 5. check health of application
     ```
-    http://localhost:8989/actuator/health
+    http://localhost:8167/actuator/health
     ```
 
 6. go to swagger to get all information and from here API can be tested
     ```
-    http://localhost:8989/swagger-ui/index.htm
+    http://localhost:8167/swagger-ui/index.htm
     ```
 7. second option Open your browser or API client (Postman) and interact with the API:
 
