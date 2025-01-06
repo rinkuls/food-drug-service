@@ -43,8 +43,8 @@ node {
 
         // Deploy to Kubernetes (Minikube) using Helm
         stage('Deploy to Minikube with Helm') {
-            echo "Deploying to Minikube using Helm with image: ${dockerImageTag}"
-            bat 'kubectl config use-context minikube'
+          echo "Deploying to Minikube using Helm with image: ${dockerImageTag}"
+          bat 'kubectl config use-context rancher-desktop'
 
             // Update Helm chart with new Docker image tag
             bat "helm upgrade --install ${releaseName} ${helmChartName} --set image.tag=${buildNumber} --namespace default || exit 255"
