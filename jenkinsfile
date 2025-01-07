@@ -41,8 +41,8 @@ node {
             }
         }
 
-        // Deploy to Kubernetes (Minikube) using Helm
-        stage('Deploy to Minikube with Helm') {
+        // Deploy to Kubernetes (Rancher-desktop) using Helm
+        stage('Deploy to Rancher-Desktop with Helm') {
           echo "Deploying to Minikube using Helm with image: ${dockerImageTag}"
           bat 'kubectl config use-context rancher-desktop'
 
@@ -56,7 +56,7 @@ node {
             bat 'kubectl get pods --namespace default || exit 255'
         }
 
-        //notifyBuild('SUCCESSFUL')
+        notifyBuild('SUCCESSFUL')
     } catch (Exception e) {
         echo "Error occurred: ${e.message}"
         currentBuild.result = "FAILED"
