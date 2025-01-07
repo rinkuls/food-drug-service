@@ -72,16 +72,32 @@ node {
 def notifyBuild(String buildStatus = 'STARTED') {
     buildStatus = buildStatus ?: 'SUCCESSFUL'
     def now = new Date()
-    def subject = "${buildStatus}, Job: ${env.JOB_NAME} FRONTEND - Deployment Sequence: [${env.BUILD_NUMBER}] "
-    def subject_email = "Spring Boot Deployment"
-    def details = """<p>${buildStatus} JOB </p>
-    <p>Job: ${env.JOB_NAME} - Deployment Sequence: [${env.BUILD_NUMBER}] - Time: ${now}</p>
-    <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME}</a>"</p>"""
+    def subject_email = "[${buildStatus}] Food-Drug-Service Deployment #${env.BUILD_NUMBER}"
+    def details = """
+    <html>
+    <body>
+        <h2>Food-Drug-Service Deployment Notification</h2>
+        <p>Hello,</p>
+        <p>The deployment process for the Food-Drug-Service application has completed with the following status:</p>
+        <ul>
+            <li><strong>Status:</strong> ${buildStatus}</li>
+            <li><strong>Job:</strong> ${env.JOB_NAME}</li>
+            <li><strong>Build Number:</strong> ${env.BUILD_NUMBER}</li>
+            <li><strong>Time:</strong> ${now}</li>
+        </ul>
+        <p>You can check the detailed console output <a href="${env.BUILD_URL}">here</a>.</p>
+        <p>Best Regards,<br>Jenkins Deployment Team</p>
+    </body>
+    </html>
+    """
 
     // Email notification
     emailext(
         to: "rinkulsharma123@gmail.com",
+        from: "hrcore.europe@gmail.com", // Replace with your desired sender email
         subject: subject_email,
         body: details,
+        mimeType: 'text/html' // Ensures email is sent in HTML format
     )
 }
+
