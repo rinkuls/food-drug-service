@@ -86,7 +86,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
             <li><strong>Time:</strong> ${now}</li>
         </ul>
         <p>You can check the detailed console output <a href="${env.BUILD_URL}">here</a>.</p>
-        <p>Best Regards,<br>Jenkins Deployment Team</p>
+        <p>Best Regards,<br>Rinkul Sharma,<br>Head of Jenkins Deployment Team(Europe Continent)</p>
     </body>
     </html>
     """
