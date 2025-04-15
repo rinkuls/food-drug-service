@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.35.0 (9532ceef3)
+  labels:
+    io.kompose.service: app
+  name: app
+spec:
+  type: NodePort
+  ports:
+    - name: "8167"
+      port: 8167
+      targetPort: 8167
+  selector:
+    io.kompose.service: app
