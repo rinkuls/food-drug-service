@@ -2,7 +2,7 @@
 # Build the  JAVA APP #
 #################
 
-FROM openjdk:17-jdk-alpine
+FROM openjdk:21-jdk
 
 WORKDIR /app
 
